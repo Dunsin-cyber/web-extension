@@ -4,9 +4,9 @@ import { Box, Text, Image } from "@chakra-ui/react";
 function SplashScreen() {
   return (
     <Box
-      h={`100vh`}
+      h={`550px`}
       mx={`auto`}
-      w={{ base: "full", md: "360px" }}
+      w="360px"
       p={5}
       textAlign={`start`}
       pos={`relative`}

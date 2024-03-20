@@ -6,5 +6,10 @@
   "action": {
     "default_title": "Your Vault",
     "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "box.png",
+    "48": "box.png",
+    "128": "box.png"
   }
 }

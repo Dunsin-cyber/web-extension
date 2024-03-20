@@ -25,7 +25,7 @@ module.exports = {
     // The frontend.entrypoint points to the HTML file for this build, so we need
     // to replace the extension to `.js`.
     // index: path.join(__dirname, frontend_entry).replace(/\.html$/, ".js"),
-    index: path.join(__dirname, frontend_entry).replace(/\.html$/, ".tsx"),
+    // index: path.join(__dirname, frontend_entry).replace(/\.html$/, ".tsx"),
     popup: path.resolve(`./src/${frontendDirectory}/popup/popup.tsx`),
   },
   devtool: isDevelopment ? "source-map" : false,
@@ -44,7 +44,6 @@ module.exports = {
     },
   },
   output: {
-    filename: "index.js",
     filename: "[name].js",
     path: path.join(__dirname, "dist", frontendDirectory),
   },
@@ -98,7 +97,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, frontend_entry),
       title: "ICVaultBox Extension",
       filename: `popup.html`,
       chunks: ["popup"],
@@ -124,6 +122,10 @@ module.exports = {
         {
           from: path.resolve(`src/${frontendDirectory}/manifest.json`),
           to: path.resolve(`dist/${frontendDirectory}`),
+        },
+        {
+          from: path.join(__dirname, "src", frontendDirectory, "assets"),
+          to: path.join(__dirname, "dist", frontendDirectory),
         },
       ],
     }),
