@@ -1,13 +1,7 @@
 {
   "canisters": {
-    "vault_extension_backend": {
-      "main": "src/vault_extension_backend/main.mo",
-      "type": "motoko"
-    },
     "vault_extension_frontend": {
-      "dependencies": [
-        "vault_extension_backend"
-      ],
+      "dependencies": [],
       "frontend": {
         "entrypoint": "src/vault_extension_frontend/src/index.html"
       },
